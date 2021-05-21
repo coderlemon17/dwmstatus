@@ -196,7 +196,7 @@ main(void)
 
 	for (;;sleep(60)) {
 		// avgs = loadavg();
-		bat = getbattery("/sys/class/power_supply/BAT0");
+		bat = getbattery("/sys/class/power_supply/BAT1");
 		// bat1 = getbattery("/sys/class/power_supply/BAT1");
 		// tmar = mktimes("%H:%M", tzargentina);
 		// tmutc = mktimes("%H:%M", tzutc);
@@ -209,6 +209,7 @@ main(void)
 		// status = smprintf("T:%s|%s|%s L:%s B:%s|%s A:%s U:%s %s",
 		// 		t0, t1, t2, avgs, bat, bat1, tmar, tmutc,
 		// 		tmbln);
+		
 		status = smprintf("Battery:%s Time:%s", bat, tmbj);
 		setstatus(status);
 
